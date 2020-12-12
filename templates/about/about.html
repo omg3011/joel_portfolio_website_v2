@@ -1,0 +1,82 @@
+{% extends 'joelsite/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Title: About Myself -->
+  <h1 class="font-weight-bold text-center mb-4">About Myself</h1>
+
+  <!-- Content -->
+  <div class="row justify-content-center my-3">
+    <!-- Row: Name -->
+      <div class="row mb-4">
+        <!-- Col 1 -->
+        <div class="col-md-2 col-sm-3">Name:</div>
+        <!-- Col 2 -->
+        <div class="col-md-8 col-sm-7">{{about.name}}</div>
+      </div>
+      <hr>
+
+      <!-- Row: Description -->
+      <div class="row mb-4">
+        <!-- Col 1 -->
+        <div class="col-md-2 col-sm-3">Description:</div>
+        <!-- Col 2 (Safe will format any html tag like <p>) -->
+        <div class="col-md-8 col-sm-7">{{about.description|safe}}</div>
+      </div>
+      <hr>
+
+      <!-- Row: Email -->
+      <div class="row mb-4">
+        <!-- Col 1 -->
+        <div class="col-md-2 col-sm-3">Email:</div>
+        <!-- Col 2 -->
+        <div class="col-md-8 col-sm-7">{{about.email}}</div>
+      </div>
+      <hr>
+
+      <!-- Row: Profile Image -->
+      <div class="row mb-4">
+        <!-- Col 1 -->
+        <div class="col-md-2 col-sm-3">Profile:</div>
+        <!-- Col 2 -->
+        <div class="col-md-8 col-sm-7">
+          <img src="{{about.profile_image.url}}" class="img-fluid" style="width: 100px">
+        </div>
+      </div>
+      <hr>
+
+      <!-- Row: Social Media -->
+      <div class="row mb-4">
+        <!-- Col 1 -->
+        <div class="col-md-2 col-sm-3">Social Media:</div>
+        <!-- Col 2 -->
+        <div class="col-md-8 col-sm-7">
+          <!-- TODO: Put image side by side with margin -->
+            <!-- Linkedin -->
+            <a href="{{about.linkedin_url}}">
+              <img src="{% static 'joelsite/linkedin.png' %}" class="img-fluid mb-4" style="height: 30px">
+            </a>
+            <br>
+            <!-- Github -->
+            <a href="{{about.github_url}}" >
+              <img src="{% static 'joelsite/github.png' %}" class="img-fluid" style="height: 30px">
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr>
+  </div>
+
+{% endblock %}
+
+<!--
+  description = models.TextField()
+  profile_image = models.ImageField(upload_to='portfolio/images')
+  linkedin_url = models.URLField(blank=True)
+  github_url = models.URLField(blank=True)
+  email = models.CharField(max_length=100) -->
+
+<!-- For resizing, watch this video
+  https://www.youtube.com/watch?v=qmPmwdshCMw&ab_channel=Academind
+ -->

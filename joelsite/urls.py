@@ -20,6 +20,14 @@ from django.conf import settings
 from joelsite import views
 
 urlpatterns = [
+    # Page: Admin
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+
+    # Page: Index
+    path('', views.index, name='index'),
+
+    # Page: About Me
+    path('about/', include('about.urls'))
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
