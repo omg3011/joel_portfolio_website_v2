@@ -1,0 +1,12 @@
+
+/* Add Spacing to card */
+.card {
+    border-radius: 5px;
+    padding: 7px 11px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 10vw;
+    object-fit: scale-down;
+}

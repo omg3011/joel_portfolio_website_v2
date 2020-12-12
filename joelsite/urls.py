@@ -27,7 +27,10 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     # Page: About Me
-    path('about/', include('about.urls'))
+    path('about/', include('about.urls')),
+
+    # Page: Portfolio
+    path('portfolio/', include('portfolio.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -51,21 +51,7 @@
             </li>
             <!-- Portfolio -->
             <li class="nav-item">
-              <!-- DROPDOWN: For Portfolio Category -->
-              <div class="btn-group">
-                <button type="button" class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Portfolio
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <!-- TODO: Dynamic load the category -->
-                  <a class="dropdown-item" href="#">C++</a>
-                  <a class="dropdown-item" href="#">Java</a>
-                  <a class="dropdown-item" href="#">Python</a>
-                  <a class="dropdown-item" href="#">Django</a>
-                  <a class="dropdown-item" href="#">Unity</a>
-                  <a class="dropdown-item" href="#">Others</a>
-                </div>
-              </div>
+              <a class="btn btn-primary" role="button" href="{% url 'portfolio:categories' %}">Portfolio</a>
             </li>
           </ul>
         </div>

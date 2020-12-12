@@ -1,0 +1,38 @@
+{% extends 'joelsite/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Header -->
+  <h1 class="font-weight-bold text-center mb-4">Portfolio Categories</h1>
+
+  <!-- Conten: Cardst -->
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      {% for category in categories %}
+      <div class="col-md-5 col-sm-12" style="margin-bottom:10px;">
+        <div class="card card-default w-20 mb-4">
+          <a href="#">
+            {% if category.title == "C++" %}
+              <img class="card-img-top" src="{% static 'joelsite/c++.png' %}" >
+            {% elif category.title == "Python" %}
+              <img class="card-img-top" src="{% static 'joelsite/python.png' %}" >
+            {% elif category.title == "Unity" %}
+              <img class="card-img-top" src="{% static 'joelsite/unity.png' %}">
+            {% elif category.title == "Java" %}
+              <img class="card-img-top" src="{% static 'joelsite/java.jpg' %}">
+            {% else %}
+              <img class="card-img-top" src="{% static 'joelsite/others.png' %}">
+            {% endif %}
+          </a>
+          <hr>
+          <h3>{{category.title}}</h3>
+          <h6>TODO: Tags</h6>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+
+categories
